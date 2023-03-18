@@ -1,15 +1,14 @@
 # Importing Libs
 import time
 import pandas as pd
-import numpy as np
 import os
 import calendar
 
 # Configuring pandas warnings
 pd.options.mode.chained_assignment = None  # default='warn'
 
-# Loading the data frame
-def load_file():
+#Loading the data frame
+def loads_file():
     data = pd.DataFrame()
     directory = os.getcwd()
     # Checking for files in current directory
@@ -146,7 +145,7 @@ def filters_lists(data):
     return df_filtered
 
 # Outputting Selected Statistics
-def statistics(filtered_df):
+def calculates_statistics(filtered_df):
     while True:
         try:
             delay_time = 0
@@ -325,7 +324,7 @@ def statistics(filtered_df):
     # Wrapping up
     time.sleep(delay_time) 
 
-def raw_data(filtered_df):
+def outputs_raw_data(filtered_df):
     # Displaying Raw Data
     current_row = 0
     rows_per_iteration = 5
@@ -353,10 +352,10 @@ def raw_data(filtered_df):
 def main():
     print('Welcome to the Bikeshare_DB interactive Analytics interface')
     while True:
-        data = load_file()
+        data = loads_file()
         filtered_df = filters_lists(data)
-        statistics(filtered_df)
-        raw_data(filtered_df)
+        calculates_statistics(filtered_df)
+        outputs_raw_data(filtered_df)
         while True:
             try:
                 restart = input('\nWould you like to restart (y/n)?\n')
