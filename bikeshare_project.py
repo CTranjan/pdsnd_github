@@ -1,12 +1,14 @@
+# Importing Libs
 import time
 import pandas as pd
 import numpy as np
 import os
 import calendar
 
+# Configuring pandas warnings
 pd.options.mode.chained_assignment = None  # default='warn'
 
-#Loading the data frame
+# Loading the data frame
 def load_file():
     data = pd.DataFrame()
     directory = os.getcwd()
@@ -25,7 +27,7 @@ def load_file():
     # df_append.to_excel(f'{directory}/result.xlsx')
     return data
 
-#Filtering the data frame
+# Filtering the data frame
 def filters_lists(data):
     delay_time = 0
     data['Start Time'] = pd.to_datetime(data['Start Time'])
@@ -346,7 +348,8 @@ def raw_data(filtered_df):
         except ValueError as e:
             print(e)
             continue
-        
+
+# Main function
 def main():
     print('Welcome to the Bikeshare_DB interactive Analytics interface')
     while True:
