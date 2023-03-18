@@ -12,5 +12,5 @@ In this project, I make use of Python to explore data related to bike share syst
 - washington.csv
 
 ** Credits **
-- udacity.com
-- stackoverflow.com
+- [udacity](https://www.udacity.com/)
+- [stackoverflow](https://stackoverflow.com/)
